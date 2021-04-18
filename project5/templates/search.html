@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block body %}
+{% if not form.is_valid %}
+    <form method="get">
+        {{ form.search }}
+        <button type="submit">OK</button>
+    </form>
+{% endif %}
+
+{% if form.is_valid %}
+    <br>
+    Search for: {{ form.cleaned_data.search }}
+{% endif %}
+{% endblock  %}

@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="firstname" placeholder="Firstname">
+        <br>
+        <br>
+        <input type="text" name="lastname" placeholder="Lastname">
+        <br><br>
+        <button type="submit" name="w">submit</button>
+    </form>
+
+    {% if fname is not None %}
+        <h4>Post Data</h4>
+        Firstname: {{ fname }} <br>
+        Lastname: {{ lname }} 
+    {% endif %}
+{% endblock  %}

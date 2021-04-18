@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block body %}
+    {% if not form.is_valid %}
+        <h4>Product info:</h4>
+        <form method="POST">
+            {% csrf_token %}
+            <table cellpadding="3">
+                {% for field in form  %}
+                    <tr><td>{{ field.label }}</td><td>{{ field }}</td></tr>
+                {% endfor %}
+                <caption align="bottom"><br><button>OK</button></caption>
+            </table>
+        </form>
+    {% endif %}
+
+    {% if form.is_valid %}
+        {{ form.name.label }}: {{ form.name.value }}<br>
+        {{ form.price.label }}: {{ form.price.value }}<br>
+        {{ form.color.label }}: {{ form.color.value }}<br>
+        {{ form.stock.label }}: {{ form.stock.value }}<br>
+        
+    {% endif %}
+{% endblock  %}

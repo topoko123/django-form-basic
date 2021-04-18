@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+{% block body %}
+    <table border="1" cellpadding="5">
+        <tr><td>path</td><td>{{ path }}</td></tr>
+        <tr><td>full_path</td><td>{{ full_path }}</td></tr>
+        <tr><td>host</td><td>{{ host }}</td></tr>
+        <tr><td>method</td><td>{{ method }}</td></tr>
+        <tr><td>is_secure</td><td>{{ is_secure }}</td></tr>
+    </table>
+{% endblock  %}

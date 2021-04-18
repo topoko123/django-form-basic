@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block body %}
+    <form method"get" >
+        <input type="text" name="q" placeholder="Search">
+        <button type="submit" name="w">OK</button>
+    </form>
+    <br>
+    {# กรณีมีข้อมูลส่งเข้ามา #}
+    {% if q is not None %}
+        search: {{ q }}
+    {% endif %}
+{% endblock  %}
